@@ -1,0 +1,15 @@
+// WIP: Correlate endpoint and identity telemetry (e.g. process + sign-in)
+// Fits: security analytics; telemetry across endpoint, identity, cloud, network
+// Adjust table names for your tenant (Defender for Endpoint, Entra sign-in, etc.)
+
+let Lookback = 24h;
+DeviceProcessEvents
+| where Timestamp > ago(Lookback)
+| summarize ProcessCount = count() by DeviceName, bin(Timestamp, 1h)
+| join kind=inner (
+    SigninLogs
+    | where TimeGenerated > ago(Lookback)
+    | summarize SignInCount = count() by DeviceName = tostring(DeviceDetail.displayName), bin(TimeGenerated, 1h)
+) on DeviceName, $left.Timestamp == $right.TimeGenerated
+| project Timestamp, DeviceName, ProcessCount, SignInCount
+| order by Timestamp desc

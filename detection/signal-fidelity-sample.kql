@@ -1,0 +1,11 @@
+// WIP: Detection signal fidelity — filter to higher-confidence signals
+// Fits: detection engineering; balancing signal fidelity, analyst efficiency, operational risk
+// Example: reduce noise by requiring multiple conditions before alerting
+
+DeviceProcessEvents
+| where Timestamp > ago(24h)
+| where FileName in~ ("powershell.exe", "pwsh.exe", "cmd.exe")
+| where ProcessCommandLine contains "-enc" or ProcessCommandLine contains "bypass"
+| where InitiatingProcessParentFileName !in~ ("explorer.exe", "code.exe")  // tune allowlist
+| project Timestamp, DeviceName, FileName, ProcessCommandLine, InitiatingProcessFileName, InitiatingProcessParentFileName
+| order by Timestamp desc

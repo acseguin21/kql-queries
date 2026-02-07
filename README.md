@@ -12,8 +12,11 @@ Personal collection of KQL (Kusto Query Language) snippets for detection and hun
 
 ## Example focus
 
+- **hunting/timeline-reconstruction.kql** — Events by device/time for DFIR narrative.
+- **hunting/telemetry-correlation-endpoint-identity.kql** — Correlate endpoint + identity telemetry.
 - **hunting/case-triage-priority-events.kql** — High-priority alerts by device/severity for triage.
-- **detection/sign-in-risk-entra.kql** — Entra ID (Azure AD) sign-in risk for identity investigations.
+- **detection/sign-in-risk-entra.kql** — Entra ID sign-in risk for identity investigations.
+- **detection/signal-fidelity-sample.kql** — Detection engineering: higher-confidence signals.
 - **detection/suspicious-powershell.kql** — PowerShell encoded/hidden patterns.
 - **utilities/common-time-window.kql** — Reusable time-range snippet.
 

@@ -1,0 +1,10 @@
+// WIP: Timeline reconstruction — events by device and time for investigative narrative
+// Fits: DFIR timeline reconstruction; correlation of telemetry into clear narratives
+// Use in Advanced hunting; adjust tables (e.g. add DeviceNetworkEvents, IdentityLogonEvents) as needed
+
+let Lookback = 7d;
+let TargetDevice = "<DeviceName>";  // or parameterize
+DeviceProcessEvents
+| where Timestamp > ago(Lookback) and DeviceName == TargetDevice
+| project Timestamp, DeviceName, FileName, ProcessCommandLine, InitiatingProcessFileName, InitiatingProcessParentFileName
+| order by Timestamp asc

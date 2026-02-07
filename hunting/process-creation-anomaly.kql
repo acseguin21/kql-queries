@@ -1,0 +1,10 @@
+// WIP: Process creation — high volume or rare parent/child pairs
+// Tune thresholds and time range as needed
+
+let Lookback = 7d;
+let Threshold = 100; // adjust for environment
+DeviceProcessEvents
+| where Timestamp > ago(Lookback)
+| summarize Count = count() by bin(Timestamp, 1h), InitiatingProcessParentFileName, InitiatingProcessFileName
+| where Count > Threshold
+| order by Count desc

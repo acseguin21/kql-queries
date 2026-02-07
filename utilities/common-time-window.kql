@@ -1,0 +1,4 @@
+// Reusable time window — paste into hunting/detection queries
+let Lookback = 24h;   // or 7d, 30d for hunting
+let BinSize = 1h;     // for summarize bin(Timestamp, BinSize)
+// Then: | where Timestamp > ago(Lookback)

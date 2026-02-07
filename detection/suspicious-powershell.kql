@@ -1,0 +1,8 @@
+// WIP: PowerShell with encoded / hidden window patterns
+// Example pattern — expand with your own logic
+
+DeviceProcessEvents
+| where Timestamp > ago(24h)
+| where FileName in~ ("powershell.exe", "pwsh.exe")
+| where ProcessCommandLine contains "-enc" or ProcessCommandLine contains "-w hidden"
+| project Timestamp, DeviceName, FileName, ProcessCommandLine, InitiatingProcessFileName

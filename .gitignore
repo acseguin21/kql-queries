@@ -1,0 +1,3 @@
+# Local / env-specific
+*.local.kql
+.env

@@ -24,6 +24,7 @@ Personal collection of KQL (Kusto Query Language) snippets for detection and hun
 
 Paste into Advanced hunting (Microsoft 365 Defender / Defender for Endpoint) or Azure Monitor / Sentinel as needed. Adjust table names and time ranges for your environment.
 
-## License
+## License and security
 
-MIT
+- **License:** [CC0 1.0 Public Domain](LICENSE) — use, modify, and distribute freely.
+- **Security:** See [SECURITY.md](SECURITY.md) for reporting and best practices.

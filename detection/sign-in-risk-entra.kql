@@ -1,6 +1,6 @@
 // WIP: Sign-in risk / identity — for Entra ID (Azure AD) sign-in logs
 // Use in Microsoft Defender for Identity, Sentinel, or Entra sign-in logs.
-// Fits: Azure Identity management and troubleshooting; identity-driven investigations
+// Relevant to: Azure Identity management and troubleshooting; identity-driven investigations
 
 SigninLogs
 | where TimeGenerated > ago(24h)

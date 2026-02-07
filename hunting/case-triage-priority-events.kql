@@ -1,6 +1,6 @@
 // WIP: High-priority events for case triage
 // Surfaces events worth triaging first (e.g. rare severity, multiple alerts same host).
-// Fits: case triage meetings; contribute to more rapid customer solutions
+// Relevant to: case triage meetings; contribute to more rapid customer solutions
 
 let Lookback = 24h;
 DeviceAlertEvents

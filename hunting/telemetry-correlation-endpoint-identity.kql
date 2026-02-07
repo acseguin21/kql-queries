@@ -1,5 +1,5 @@
 // WIP: Correlate endpoint and identity telemetry (e.g. process + sign-in)
-// Fits: security analytics; telemetry across endpoint, identity, cloud, network
+// Relevant to: security analytics; telemetry across endpoint, identity, cloud, network
 // Adjust table names for your tenant (Defender for Endpoint, Entra sign-in, etc.)
 
 let Lookback = 24h;

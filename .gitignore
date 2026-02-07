@@ -1,3 +1,20 @@
-# Local / env-specific
+# Local / env-specific — never commit
 *.local.kql
 .env
+.env.*
+!.env.example
+*.key
+*.pem
+secrets/
+
+# OS and editor
+.DS_Store
+Thumbs.db
+*.swp
+*~
+.idea/
+.vscode/
+
+# Temporary
+*.tmp
+*.log

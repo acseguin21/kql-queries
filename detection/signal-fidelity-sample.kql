@@ -1,5 +1,5 @@
 // WIP: Detection signal fidelity — filter to higher-confidence signals
-// Fits: detection engineering; balancing signal fidelity, analyst efficiency, operational risk
+// Relevant to: detection engineering; balancing signal fidelity, analyst efficiency, operational risk
 // Example: reduce noise by requiring multiple conditions before alerting
 
 DeviceProcessEvents
